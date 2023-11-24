@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Repositorios.Asignatura
 {
-    internal interface IAsignaturaRepositorio
+    public interface IAsignaturaRepositorio
     {
+        List<Datos.Models.Asignatura> ListaAsignatura();
+        List<Datos.Models.Asignatura> ListaAsignaturaPorID(int EstudianteID);
+        bool GuardarAsignatura(Datos.Models.Asignatura Asignatura);
+        bool ActualizarAsignatura(Datos.Models.Asignatura Asignatura);
     }
 }
