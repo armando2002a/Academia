@@ -37,9 +37,51 @@ namespace Repositorios.Docente
 
         public List<Datos.Models.Docente> ListaDocentePorID(int DocenteID)
         {
-            return _appDbContext.Docente.FromSqlRaw(string.Format(@"EXEC [dbo].[BuscarEstudiantePorID] {0}", DocenteID)).ToList();
+            return _appDbContext.Docente.FromSqlRaw(string.Format(@"EXEC [dbo].[BuscarDocentePorID] {0}", DocenteID)).ToList();
         }
 
+        public bool GuardarDocente(Datos.Models.Docente Docente)
+        {
+            try
+            {
+                var sql = string.Format(@"EXEC [dbo].[AgregarEstudiante] '{0}', {1}, '{2}', '{3}', '{4}', '{5}'",
+                    Docente.Nombre,
+                    Docente.Edad,
+                    Docente.Celular,
+                    Docente.Correo,
+                    Docente.Direccion,
+                    Docente.Cedula
+                );
+                var result = _appDbContext.Database.ExecuteSqlRaw(sql);
 
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool ActualizarDocente(Datos.Models.Docente Docente)
+        {
+            try
+            {
+                _appDbContext.Database.ExecuteSqlRaw(
+                    string.Format(@"EXEC [dbo].[EditarEstudiante] {0}, '{1}', {2}, '{3}', '{4}', '{5}', '{6}'",
+                    Docente.DocenteID,
+                    Docente.Nombre,
+                    Docente.Edad,
+                    Docente.Celular,
+                    Docente.Correo,
+                    Docente.Direccion,
+                    Docente.Cedula
+                ));
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
