@@ -13,5 +13,6 @@ namespace Datos.DataDb
         public DbSet<Estudiante> Estudiante { get; set; } 
         public DbSet<Docente> Docente { get; set; }
         public DbSet<Colaborador> Colaborador { get; set; }
+        public DbSet<Asignatura> Asignatura { get; set; }
     }
 }
