@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repositorios.Asignatura
+namespace Repositorios.Nota
 {
-    public interface IAsignaturaRepositorio
+    internal interface INotaRepositorio
     {
     }
 }

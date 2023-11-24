@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repositorios.Asignatura
+namespace Servicio.Matricula
 {
-    public interface IAsignaturaRepositorio
+    internal interface IMatriculaServicio
     {
     }
 }
