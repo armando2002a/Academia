@@ -5,7 +5,7 @@ namespace Academia.Controllers.v1.Docente
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DocenteController : ControllerBase
+    public class DocenteController : ControllerBase //Base
     {
         private readonly IDocenteServicio _estudianteServicio;
 
