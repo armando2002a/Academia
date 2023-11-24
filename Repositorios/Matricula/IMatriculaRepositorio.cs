@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Repositorios.Matricula
 {
-    internal interface IMatriculaRepositorio
+    public interface IMatriculaRepositorio
     {
+        List<Datos.Models.Matricula> ListaMatricula();
+        List<Datos.Models.Matricula> ListaMatriculaPorID(int MatriculaID);
+        bool GuardarMatricula(Datos.Models.Matricula Matricula);
+        bool ActualizarMatricula(Datos.Models.Matricula Matricula);
     }
 }
