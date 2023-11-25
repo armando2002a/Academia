@@ -1,4 +1,7 @@
-﻿namespace Academia.Controllers.v1.Asignatura
+﻿using Microsoft.AspNetCore.Mvc;
+using Servicio.Asignatura;
+
+namespace Academia.Controllers.v1.Asignatura
 {
     [Route("api/[controller]")]
     [ApiController]

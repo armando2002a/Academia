@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Datos.DataDb;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,12 +28,9 @@ namespace Repositorios.Matricula
                 listMatricula.Add(new Datos.Models.Matricula
                 {
                     MatriculaID = item.MatriculaID,
-                    Nombre = item.Nombre,
-                    Edad = item.Edad,
-                    Celular = item.Celular,
-                    Correo = item.Correo,
-                    Direccion = item.Direccion,
-                    Cedula = item.Cedula
+                    EstudianteID = item.EstudianteID,
+                    HorarioID = item.HorarioID,
+                    FechaMatricula = item.FechaMatricula
 
                 });
             }
@@ -47,13 +46,10 @@ namespace Repositorios.Matricula
         {
             try
             {
-                var sql = string.Format(@"EXEC [dbo].[AgregarEstudiante] '{0}', {1}, '{2}', '{3}', '{4}', '{5}'",
-                    Matricula.Nombre,
-                    Matricula.Edad,
-                    Matricula.Celular,
-                    Matricula.Correo,
-                    Matricula.Direccion,
-                    Matricula.Cedula
+                var sql = string.Format(@"EXEC [dbo].[AgregarEstudiante] '{0}', {1}, '{2}'",
+                    Matricula.EstudianteID,
+                    Matricula.HorarioID,
+                    Matricula.FechaMatricula
                 );
                 var result = _appDbContext.Database.ExecuteSqlRaw(sql);
 
@@ -70,14 +66,12 @@ namespace Repositorios.Matricula
             try
             {
                 _appDbContext.Database.ExecuteSqlRaw(
-                    string.Format(@"EXEC [dbo].[EditarMatricula] {0}, '{1}', {2}, '{3}', '{4}', '{5}', '{6}'",
+                    string.Format(@"EXEC [dbo].[EditarMatricula] {0}, '{1}', {2}, '{3}'",
                     Matricula.MatriculaID,
-                    Matricula.Nombre,
-                    Matricula.Edad,
-                    Matricula.Celular,
-                    Matricula.Correo,
-                    Matricula.Direccion,
-                    Matricula.Cedula
+                    Matricula.EstudianteID,
+                    Matricula.HorarioID,
+                    Matricula.FechaMatricula
+
                 ));
                 return true;
             }

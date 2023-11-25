@@ -1,10 +1,12 @@
-﻿namespace Servicio.Asignatura
+﻿using Repositorios.Asignatura;
+
+namespace Servicio.Asignatura
 {
     public class AsignaturaServicio : IAsignaturaServicio
     {
         private readonly IAsignaturaRepositorio _asignaturaRepositorio;
 
-        public EstudianteServicio(IAsignaturaRepositorio asignaturaRepositorio)
+        public AsignaturaServicio(IAsignaturaRepositorio asignaturaRepositorio)
         {
             _asignaturaRepositorio = asignaturaRepositorio;
         }

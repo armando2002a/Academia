@@ -1,4 +1,7 @@
-﻿namespace Academia.Controllers.v1.Matricula
+﻿using Microsoft.AspNetCore.Mvc;
+using Servicio.Matricula;
+
+namespace Academia.Controllers.v1.Matricula
 {
     [Route("api/[controller]")]
     [ApiController]
