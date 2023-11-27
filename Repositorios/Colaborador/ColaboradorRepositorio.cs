@@ -9,7 +9,7 @@ namespace Repositorios.Colaborador
 
         public ColaboradorRepositorio(AppDbContext appDbContext)
         {
-            _appDbContext = appDbContext;
+            this._appDbContext = appDbContext;
         }
 
         public List<Datos.Models.Colaborador> ListaColaborador()

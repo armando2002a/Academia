@@ -1,10 +1,5 @@
 ﻿using Datos.DataDb;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repositorios.Matricula
 {
@@ -14,7 +9,7 @@ namespace Repositorios.Matricula
 
         public MatriculaRepositorio(AppDbContext appDbContext)
         {
-            _appDbContext = appDbContext;
+            this._appDbContext = appDbContext;
         }
 
         public List<Datos.Models.Matricula> ListaMatricula()

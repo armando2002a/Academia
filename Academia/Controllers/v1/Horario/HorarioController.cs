@@ -22,7 +22,7 @@ namespace Academia.Controllers.v1.Horario
 
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("ListaPorID")]
         public IActionResult ListaPorID([FromBody] Datos.Models.Horario Horario)
         {
@@ -36,7 +36,7 @@ namespace Academia.Controllers.v1.Horario
             return Ok(_horarioServicio.GuardarHorario(Horario));
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("Actualizar")]
         public IActionResult Actualizar([FromBody] Datos.Models.Horario Horario)
         {

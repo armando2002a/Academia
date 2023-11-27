@@ -3,7 +3,7 @@ using Repositorios.Matricula;
 
 namespace Servicio.Matricula
 {
-    public class MatriculaServicio
+    public class MatriculaServicio : IMatriculaServicio
     {
         private readonly IMatriculaRepositorio _matriculaRepositorio;
 

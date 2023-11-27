@@ -1,15 +1,21 @@
 using Datos.DataDb;
 using Microsoft.EntityFrameworkCore;
 using Repositorios.Asignatura;
+using Repositorios.Aula;
 using Repositorios.Colaborador;
 using Repositorios.Docente;
 using Repositorios.Estudiante;
+using Repositorios.Horario;
 using Repositorios.Matricula;
+using Repositorios.Nota;
 using Servicio.Asignatura;
+using Servicio.Aula;
 using Servicio.Colaborador;
 using Servicio.Docente;
 using Servicio.Estudiante;
+using Servicio.Horario;
 using Servicio.Matricula;
+using Servicio.Nota;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(opcion => opcion.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -31,6 +37,21 @@ builder.Services.AddScoped<IDocenteServicio, DocenteServicio>();
 
 builder.Services.AddTransient<IColaboradorRepositorio, ColaboradorRepositorio>();
 builder.Services.AddScoped<IColaboradorServicio, ColaboradorServicio>();
+
+builder.Services.AddTransient<IAsignaturaRepositorio, AsignaturaRepositorio>();
+builder.Services.AddScoped<IAsignaturaServicio, AsignaturaServicio>();
+
+//builder.Services.AddTransient<IMatriculaRepositorio, MatriculaRepositorio>();
+//builder.Services.AddScoped<IMatriculaServicio, MatriculaServicio>();
+
+builder.Services.AddTransient<IHorarioRepositorio, HorarioRepositorio>();
+builder.Services.AddScoped<IHorarioServicio, HorarioServicio>();
+
+//builder.Services.AddTransient<INotaRepositorio, NotaRepositorio>();
+//builder.Services.AddScoped<INotaServicio, NotaServicio>();
+
+//builder.Services.AddTransient<IAulaRepositorio, AulaRepositorio>();
+//builder.Services.AddScoped<IAulaServicio, AulaServicio>();
 
 
 var app = builder.Build();

@@ -22,7 +22,7 @@ namespace Academia.Controllers.v1.Nota
 
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("ListaPorID")]
         public IActionResult ListaPorID([FromBody] Datos.Models.Nota Nota)
         {
@@ -36,7 +36,7 @@ namespace Academia.Controllers.v1.Nota
             return Ok(_notaServicio.GuardarNota(Nota));
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("Actualizar")]
         public IActionResult Actualizar([FromBody] Datos.Models.Nota Nota)
         {

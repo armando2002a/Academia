@@ -1,5 +1,4 @@
 ﻿using Datos.DataDb;
-using Datos.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Repositorios.Aula

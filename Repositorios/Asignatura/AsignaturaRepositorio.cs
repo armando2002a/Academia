@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Repositorios.Asignatura
 {
-    public class AsignaturaRepositorio
+    public class AsignaturaRepositorio : IAsignaturaRepositorio
     {
         private readonly AppDbContext _appDbContext;
 
