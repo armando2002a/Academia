@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Servicio.Nota
+﻿namespace Servicio.Nota
 {
-    internal interface INotaServicio
+    public interface INotaServicio
     {
+        List<Datos.Models.Nota> ListaNota();
+        List<Datos.Models.Nota> ListaNotaPorID(int NotaID);
+        bool GuardarNota(Datos.Models.Nota Nota);
+        bool ActualizarNota(Datos.Models.Nota Nota
+            );
     }
 }

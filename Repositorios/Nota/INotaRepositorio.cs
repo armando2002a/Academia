@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Repositorios.Nota
+﻿namespace Repositorios.Nota
 {
-    internal interface INotaRepositorio
+    public interface INotaRepositorio
     {
+        List<Datos.Models.Nota> ListaNota();
+        List<Datos.Models.Nota> ListaNotaPorID(int NotaID);
+        bool GuardarNota(Datos.Models.Nota Nota);
+        bool ActualizarNota(Datos.Models.Nota Nota);
     }
 }

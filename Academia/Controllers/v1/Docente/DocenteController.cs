@@ -22,7 +22,7 @@ namespace Academia.Controllers.v1.Docente
            
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("ListaPorID")]
         public IActionResult ListaPorID([FromBody] Datos.Models.Docente Docente)
         {
@@ -36,7 +36,7 @@ namespace Academia.Controllers.v1.Docente
             return Ok(_docenteServicio.GuardarDocente(Docente));
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("Actualizar")]
         public IActionResult Actualizar([FromBody] Datos.Models.Docente Docente)
         {

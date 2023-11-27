@@ -22,7 +22,7 @@ namespace Academia.Controllers.v1.Asignatura
            
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("ListaPorID")]
         public IActionResult ListaPorID([FromBody] Datos.Models.Asignatura Asignatura)
         {
@@ -36,7 +36,7 @@ namespace Academia.Controllers.v1.Asignatura
             return Ok(_asignaturaServicio.GuardarAsignatura(Asignatura));
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("Actualizar")]
         public IActionResult Actualizar([FromBody] Datos.Models.Asignatura Asignatura)
         {

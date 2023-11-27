@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Servicio.Horario
+﻿namespace Servicio.Horario
 {
-    internal interface IHorarioServicio
+    public interface IHorarioServicio 
     {
+        List<Datos.Models.Horario> ListaHorario();
+        List<Datos.Models.Horario> ListaHorarioPorID(int HorarioID);
+        bool GuardarHorario(Datos.Models.Horario Horario);
+        bool ActualizarHorario(Datos.Models.Horario Horario);
     }
 }

@@ -22,7 +22,7 @@ namespace Academia.Controllers.v1.Estudiante
            
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("ListaPorID")]
         public IActionResult ListaPorID([FromBody] Datos.Models.Estudiante Estudiante)
         {
@@ -36,7 +36,7 @@ namespace Academia.Controllers.v1.Estudiante
             return Ok(_estudianteServicio.GuardarEstudiante(Estudiante));
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("Actualizar")]
         public IActionResult Actualizar([FromBody] Datos.Models.Estudiante Estudiante)
         {

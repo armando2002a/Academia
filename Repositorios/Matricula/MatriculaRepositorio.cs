@@ -46,7 +46,7 @@ namespace Repositorios.Matricula
         {
             try
             {
-                var sql = string.Format(@"EXEC [dbo].[AgregarEstudiante] '{0}', {1}, '{2}'",
+                var sql = string.Format(@"EXEC [dbo].[AgregarMatricula] '{0}', {1}, '{2}'",
                     Matricula.EstudianteID,
                     Matricula.HorarioID,
                     Matricula.FechaMatricula

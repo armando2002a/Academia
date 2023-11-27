@@ -1,11 +1,15 @@
 using Datos.DataDb;
 using Microsoft.EntityFrameworkCore;
+using Repositorios.Asignatura;
 using Repositorios.Colaborador;
 using Repositorios.Docente;
 using Repositorios.Estudiante;
+using Repositorios.Matricula;
+using Servicio.Asignatura;
 using Servicio.Colaborador;
 using Servicio.Docente;
 using Servicio.Estudiante;
+using Servicio.Matricula;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(opcion => opcion.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -27,6 +31,7 @@ builder.Services.AddScoped<IDocenteServicio, DocenteServicio>();
 
 builder.Services.AddTransient<IColaboradorRepositorio, ColaboradorRepositorio>();
 builder.Services.AddScoped<IColaboradorServicio, ColaboradorServicio>();
+
 
 var app = builder.Build();
 

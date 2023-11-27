@@ -9,7 +9,7 @@ namespace Repositorios.Docente
 
         public DocenteRepositorio(AppDbContext appDbContext)
         {
-            _appDbContext = appDbContext;
+            this._appDbContext = appDbContext;
         }
 
         public List<Datos.Models.Docente> ListaDocente()
@@ -44,7 +44,7 @@ namespace Repositorios.Docente
         {
             try
             {
-                var sql = string.Format(@"EXEC [dbo].[AgregarEstudiante] '{0}', {1}, '{2}', '{3}', '{4}', '{5}'",
+                var sql = string.Format(@"EXEC [dbo].[AgregarDocente] '{0}', {1}, '{2}', '{3}', '{4}', '{5}'",
                     Docente.Nombre,
                     Docente.Edad,
                     Docente.Celular,
@@ -67,7 +67,7 @@ namespace Repositorios.Docente
             try
             {
                 _appDbContext.Database.ExecuteSqlRaw(
-                    string.Format(@"EXEC [dbo].[EditarEstudiante] {0}, '{1}', {2}, '{3}', '{4}', '{5}', '{6}'",
+                    string.Format(@"EXEC [dbo].[EditarDocente] {0}, '{1}', {2}, '{3}', '{4}', '{5}', '{6}'",
                     Docente.DocenteID,
                     Docente.Nombre,
                     Docente.Edad,

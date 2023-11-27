@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Servicio.Aula
+﻿namespace Servicio.Aula
 {
-    internal interface IAulaServicio
+    public interface IAulaServicio
     {
+        List<Datos.Models.Aula> ListaAula();
+        List<Datos.Models.Aula> ListaAulaPorID(int AulaID);
+        bool GuardarAula(Datos.Models.Aula Aula);
+        bool ActualizarAula(Datos.Models.Aula Aula);
     }
 }

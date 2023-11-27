@@ -1,12 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Repositorios.Aula;
 
 namespace Servicio.Aula
 {
-    internal class AulaServicio
+    public class AulaServicio : IAulaServicio
     {
+        private readonly IAulaRepositorio _aulaRepositorio;
+
+        public AulaServicio(IAulaRepositorio aulaRepositorio)
+        {
+            _aulaRepositorio = aulaRepositorio;
+        }
+
+        public List<Datos.Models.Aula> ListaAula() => _aulaRepositorio.ListaAula();
+
+        public List<Datos.Models.Aula> ListaAulaPorID(int AulaID) => _aulaRepositorio.ListaAulaPorID(AulaID);
+
+        public bool GuardarAula(Datos.Models.Aula Aula) => _aulaRepositorio.GuardarAula(Aula);
+
+        public bool ActualizarAula(Datos.Models.Aula Aula) => _aulaRepositorio.ActualizarAula(Aula);
     }
 }
