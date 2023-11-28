@@ -7,6 +7,6 @@ namespace Datos.Models
         [Key]
         public int NotaID { get; set; }
         public int MatriculaID { get; set; }
-        public string? Calificacion { get; set; }
+        public Decimal? Calificacion { get; set; }
     }
 }

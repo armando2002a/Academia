@@ -41,17 +41,17 @@ builder.Services.AddScoped<IColaboradorServicio, ColaboradorServicio>();
 builder.Services.AddTransient<IAsignaturaRepositorio, AsignaturaRepositorio>();
 builder.Services.AddScoped<IAsignaturaServicio, AsignaturaServicio>();
 
-//builder.Services.AddTransient<IMatriculaRepositorio, MatriculaRepositorio>();
-//builder.Services.AddScoped<IMatriculaServicio, MatriculaServicio>();
-
 builder.Services.AddTransient<IHorarioRepositorio, HorarioRepositorio>();
 builder.Services.AddScoped<IHorarioServicio, HorarioServicio>();
 
-//builder.Services.AddTransient<INotaRepositorio, NotaRepositorio>();
-//builder.Services.AddScoped<INotaServicio, NotaServicio>();
+builder.Services.AddTransient<INotaRepositorio, NotaRepositorio>();
+builder.Services.AddScoped<INotaServicio, NotaServicio>();
 
-//builder.Services.AddTransient<IAulaRepositorio, AulaRepositorio>();
-//builder.Services.AddScoped<IAulaServicio, AulaServicio>();
+builder.Services.AddTransient<IAulaRepositorio, AulaRepositorio>();
+builder.Services.AddScoped<IAulaServicio, AulaServicio>();
+
+//builder.Services.AddTransient<IMatriculaRepositorio, MatriculaRepositorio>();
+//builder.Services.AddScoped<IMatriculaServicio, MatriculaServicio>();
 
 
 var app = builder.Build();

@@ -7,7 +7,7 @@ namespace Datos.Models
         [Key]
         public int AsignaturaID { get; set; }
         public string? AsignaturaNombre { get; set; }
-        public string? Nivel { get; set; }
-        public string? Grado { get; set; }
+        public int? Nivel { get; set; }
+        public int? Grado { get; set; }
     }
 }
