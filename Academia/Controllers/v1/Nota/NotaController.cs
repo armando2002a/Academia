@@ -22,11 +22,11 @@ namespace Academia.Controllers.v1.Nota
 
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("ListaPorID")]
         public IActionResult ListaPorID([FromBody] Datos.Models.Nota Nota)
         {
-            return StatusCode(StatusCodes.Status200OK, new { mensaje = "Ok", response = _notaServicio.ListaNotaPorID(Nota.NotaID) });
+            return Ok(_notaServicio.ListaNotaPorID(Nota.NotaID));
         }
 
         [HttpPost]

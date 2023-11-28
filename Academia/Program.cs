@@ -50,8 +50,8 @@ builder.Services.AddScoped<INotaServicio, NotaServicio>();
 builder.Services.AddTransient<IAulaRepositorio, AulaRepositorio>();
 builder.Services.AddScoped<IAulaServicio, AulaServicio>();
 
-//builder.Services.AddTransient<IMatriculaRepositorio, MatriculaRepositorio>();
-//builder.Services.AddScoped<IMatriculaServicio, MatriculaServicio>();
+builder.Services.AddTransient<IMatriculaRepositorio, MatriculaRepositorio>();
+builder.Services.AddScoped<IMatriculaServicio, MatriculaServicio>();
 
 
 var app = builder.Build();

@@ -61,7 +61,7 @@ namespace Repositorios.Asignatura
             try
             {
                 _appDbContext.Database.ExecuteSqlRaw(
-                    string.Format(@"EXEC [dbo].[EditarAsignatura] {0}, '{1}', {2}, '{3}''",
+                    string.Format(@"EXEC [dbo].[EditarAsignatura] {0}, '{1}', {2}, '{3}'",
                     Asignatura.AsignaturaID,
                     Asignatura.AsignaturaNombre,
                     Asignatura.Nivel,

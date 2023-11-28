@@ -22,11 +22,11 @@ namespace Academia.Controllers.v1.Horario
 
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("ListaPorID")]
         public IActionResult ListaPorID([FromBody] Datos.Models.Horario Horario)
         {
-            return StatusCode(StatusCodes.Status200OK, new { mensaje = "Ok", response = _horarioServicio.ListaHorarioPorID(Horario.HorarioID) });
+            return Ok(_horarioServicio.ListaHorarioPorID(Horario.HorarioID));
         }
 
         [HttpPost]

@@ -7,7 +7,7 @@ namespace Servicio.Matricula
     {
         private readonly IMatriculaRepositorio _matriculaRepositorio;
 
-        public MatriculaServicio(MatriculaRepositorio MatriculaRepositorio)
+        public MatriculaServicio(IMatriculaRepositorio MatriculaRepositorio)
         {
             _matriculaRepositorio = MatriculaRepositorio;
         }

@@ -22,11 +22,11 @@ namespace Academia.Controllers.v1.Asignatura
            
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("ListaPorID")]
         public IActionResult ListaPorID([FromBody] Datos.Models.Asignatura Asignatura)
         {
-            return StatusCode(StatusCodes.Status200OK, new { mensaje = "Ok", response = _asignaturaServicio.ListaAsignaturaPorID(Asignatura.AsignaturaID) });
+            return Ok(_asignaturaServicio.ListaAsignaturaPorID(Asignatura.AsignaturaID));
         }
 
         [HttpPost]

@@ -22,11 +22,11 @@ namespace Academia.Controllers.v1.Aula
 
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("ListaPorID")]
         public IActionResult ListaPorID([FromBody] Datos.Models.Aula Aula)
         {
-            return StatusCode(StatusCodes.Status200OK, new { mensaje = "Ok", response = _aulaServicio.ListaAulaPorID(Aula.AulaID) });
+            return Ok(_aulaServicio.ListaAulaPorID(Aula.AulaID));
         }
 
         [HttpPost]

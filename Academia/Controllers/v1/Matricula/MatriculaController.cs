@@ -22,11 +22,11 @@ namespace Academia.Controllers.v1.Matricula
            
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("ListaPorID")]
         public IActionResult ListaPorID([FromBody] Datos.Models.Matricula Matricula)
         {
-            return StatusCode(StatusCodes.Status200OK, new { mensaje = "Ok", response = _matriculaServicio.ListaMatriculaPorID(Matricula.MatriculaID) });
+            return Ok(_matriculaServicio.ListaMatriculaPorID(Matricula.MatriculaID));
         }
 
         [HttpPost]
