@@ -6,6 +6,7 @@ using Repositorios.Colaborador;
 using Repositorios.Docente;
 using Repositorios.Estudiante;
 using Repositorios.Horario;
+using Repositorios.InformacionDetalladaClases;
 using Repositorios.Matricula;
 using Repositorios.Nota;
 using Servicio.Asignatura;
@@ -14,6 +15,7 @@ using Servicio.Colaborador;
 using Servicio.Docente;
 using Servicio.Estudiante;
 using Servicio.Horario;
+using Servicio.InformacionDetalladaClases;
 using Servicio.Matricula;
 using Servicio.Nota;
 
@@ -52,6 +54,9 @@ builder.Services.AddScoped<IAulaServicio, AulaServicio>();
 
 builder.Services.AddTransient<IMatriculaRepositorio, MatriculaRepositorio>();
 builder.Services.AddScoped<IMatriculaServicio, MatriculaServicio>();
+
+builder.Services.AddTransient<IDetallesClaseRepositorio, DetallesClaseRepositorio>();
+builder.Services.AddScoped<IDetallesClaseServicio, DetallesClaseServicio>();
 
 
 var app = builder.Build();

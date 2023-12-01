@@ -18,6 +18,7 @@ namespace Datos.DataDb
         public DbSet<Aula> Aula { get; set; }
         public DbSet<Matricula> Matricula { get; set; }
         public DbSet<Nota> Nota { get; set; }
+        public DbSet<InformacionDetalladaClases> DetallesClases { get; set; }
 
 
     }
