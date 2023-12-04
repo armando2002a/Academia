@@ -13,6 +13,8 @@ namespace Servicio.Horario
 
         public List<Datos.Models.Horario> ListaHorario() => _horarioRepositorio.ListaHorario();
 
+        public List<Datos.Models.HorarioMatriculaDatos> ListaHorarioMatricula() => _horarioRepositorio.ListaHorarioMatricula();
+
         public List<Datos.Models.Horario> ListaHorarioPorID(int HorarioID) => _horarioRepositorio.ListaEstuHorarioPorID(HorarioID);
 
         public bool GuardarHorario(Datos.Models.Horario Horario) => _horarioRepositorio.GuardarHorario(Horario);
