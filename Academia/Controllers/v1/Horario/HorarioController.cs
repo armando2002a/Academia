@@ -22,6 +22,14 @@ namespace Academia.Controllers.v1.Horario
 
         }
 
+        [HttpGet]
+        [Route("ListaHorarioMatricula")]
+        public IActionResult ListaHorarioMatricula()
+        {
+            return StatusCode(StatusCodes.Status200OK, new { mensaje = "Ok", response = _horarioServicio.ListaHorarioMatricula() });
+
+        }
+
         [HttpPost]
         [Route("ListaPorID")]
         public IActionResult ListaPorID([FromBody] Datos.Models.Horario Horario)
