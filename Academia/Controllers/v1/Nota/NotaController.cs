@@ -23,6 +23,26 @@ namespace Academia.Controllers.v1.Nota
         }
 
         [HttpPost]
+        [Route("ListaPorID/{EstudianteID}")]
+        public IActionResult ListaPorIDNota(int EstudianteID)
+        {
+            if (EstudianteID <= 0)
+            {
+                return BadRequest("Se requiere un ID de estudiante válido.");
+            }
+
+            List<Datos.Models.NotaPorEstudiante> listaNotas = _notaServicio.ListaNotaClase(EstudianteID);
+
+            if (listaNotas == null || !listaNotas.Any())
+            {
+                return NotFound("No se encontraron notas para el estudiante con el ID proporcionado.");
+            }
+
+            return Ok(listaNotas);
+        }
+
+
+        [HttpPost]
         [Route("ListaPorID")]
         public IActionResult ListaPorID([FromBody] Datos.Models.Nota Nota)
         {

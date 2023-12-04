@@ -13,6 +13,8 @@ namespace Servicio.Aula
 
         public List<Datos.Models.Aula> ListaAula() => _aulaRepositorio.ListaAula();
 
+        public List<Datos.Models.AulaInfo> ListaAulaInfo() => _aulaRepositorio.ListaAulaInfo();
+
         public List<Datos.Models.Aula> ListaAulaPorID(int AulaID) => _aulaRepositorio.ListaAulaPorID(AulaID);
 
         public bool GuardarAula(Datos.Models.Aula Aula) => _aulaRepositorio.GuardarAula(Aula);

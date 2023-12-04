@@ -23,6 +23,33 @@ namespace Academia.Controllers.v1.Docente
         }
 
         [HttpPost]
+        [Route("ListaAlumnosPorDocenteID/{DocenteID}")]
+        public IActionResult ListaAlumnosPorDocenteID(int DocenteID)
+        {
+            if (DocenteID <= 0)
+            {
+                return BadRequest("Se requiere un ID de estudiante válido.");
+            }
+
+            List<Datos.Models.AlumnosMaestros> listaAlumnos = _docenteServicio.ListaAlumnos(DocenteID);
+
+            if (listaAlumnos == null || !listaAlumnos.Any())
+            {
+                return NotFound("No se encontraron notas para el estudiante con el ID proporcionado.");
+            }
+
+            return Ok(listaAlumnos);
+        }
+
+        [HttpGet]
+        [Route("ListaDocente")]
+        public IActionResult ListaDocente()
+        {
+            return StatusCode(StatusCodes.Status200OK, new { mensaje = "Ok", response = _docenteServicio.DocenteHorario() });
+
+        }
+
+        [HttpPost]
         [Route("ListaPorID")]
         public IActionResult ListaPorID([FromBody] Datos.Models.Docente Docente)
         {

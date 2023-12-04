@@ -1,4 +1,5 @@
 ﻿using Datos.DataDb;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace Repositorios.Nota
@@ -30,6 +31,14 @@ namespace Repositorios.Nota
             }
             return listNota;
         }
+
+        public List<Datos.Models.NotaPorEstudiante> ListaNotaClase(int EstudianteID)
+        {
+            var result = _appDbContext.NotaClase.FromSqlRaw("EXEC ObtenerNotasPorEstudiante @EstudianteID", new SqlParameter("@EstudianteID", EstudianteID)).ToList();
+
+            return result;
+        }
+
 
         public List<Datos.Models.Nota> ListaNotaPorID(int NotaID)
         {

@@ -19,7 +19,10 @@ namespace Datos.DataDb
         public DbSet<Matricula> Matricula { get; set; }
         public DbSet<Nota> Nota { get; set; }
         public DbSet<InformacionDetalladaClases> DetallesClases { get; set; }
-
+        public DbSet<NotaPorEstudiante> NotaClase { get; set; }
+        public DbSet<DocenteHorario> DocenteHorarios { get; set; }
+        public DbSet<AulaInfo> AulaInfo { get; set; }
+        public DbSet<AlumnosMaestros> Alumnos { get; set; }
 
     }
 }

@@ -1,5 +1,4 @@
-﻿using Repositorios.Docente;
-using Repositorios.Nota;
+﻿using Repositorios.Nota;
 
 namespace Servicio.Nota
 {
@@ -13,6 +12,8 @@ namespace Servicio.Nota
         }
 
         public List<Datos.Models.Nota> ListaNota() => _notaRepositorio.ListaNota();
+
+        public List<Datos.Models.NotaPorEstudiante> ListaNotaClase(int EstudianteID) => _notaRepositorio.ListaNotaClase(EstudianteID);
 
         public List<Datos.Models.Nota> ListaNotaPorID(int NotaID) => _notaRepositorio.ListaNotaPorID(NotaID);
 

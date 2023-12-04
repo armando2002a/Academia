@@ -1,4 +1,5 @@
 ﻿using Datos.DataDb;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 namespace Repositorios.Docente
@@ -33,6 +34,31 @@ namespace Repositorios.Docente
                 });
             }
             return listDocente;
+        }
+
+        public List<Datos.Models.AlumnosMaestros> ListaAlumnos(int DocenteID)
+        {
+            var result = _appDbContext.Alumnos.FromSqlRaw("EXEC ObtenerAlumnosPorMaestro @DocenteID", new SqlParameter("@DocenteID", DocenteID)).ToList();
+
+            return result;
+        }
+
+        public List<Datos.Models.DocenteHorario> DocenteHorario()
+        {
+            List<Datos.Models.DocenteHorario> DocenteHorario = new List<Datos.Models.DocenteHorario>();
+
+            var result = _appDbContext.DocenteHorarios.FromSqlRaw("EXEC dbo.DocenteDatosHorario").ToList();
+
+            foreach (var item in result)
+            {
+                DocenteHorario.Add(new Datos.Models.DocenteHorario
+                {
+                    DocenteID = item.DocenteID,
+                    Nombre = item.Nombre
+
+                });
+            }
+            return DocenteHorario;
         }
 
         public List<Datos.Models.Docente> ListaDocentePorID(int DocenteID)

@@ -33,6 +33,26 @@ namespace Repositorios.Aula
             return listAula;
         }
 
+        public List<Datos.Models.AulaInfo> ListaAulaInfo()
+        {
+            List<Datos.Models.AulaInfo> listAulaInfo = new List<Datos.Models.AulaInfo>();
+
+            var result = _appDbContext.AulaInfo.FromSqlRaw("EXEC dbo.AulaDatosHorario").ToList();
+
+            foreach (var item in result)
+            {
+                listAulaInfo.Add(new Datos.Models.AulaInfo
+                {
+                    AulaID = item.AulaID,
+                    Numero_de_Aula = item.Numero_de_Aula,
+                    Horario_Clase = item.Horario_Clase
+                });
+            }
+
+            return listAulaInfo;
+        }
+
+
         public List<Datos.Models.Aula> ListaAulaPorID(int AulaID)
         {
             return _appDbContext.Aula.FromSqlRaw(string.Format(@"EXEC [dbo].[BuscarAulaPorID] {0}", AulaID)).ToList();

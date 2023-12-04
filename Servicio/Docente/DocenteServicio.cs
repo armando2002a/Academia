@@ -13,6 +13,10 @@ namespace Servicio.Docente
 
         public List<Datos.Models.Docente> ListaDocente() => _docenteRepositorio.ListaDocente();
 
+        public List<Datos.Models.DocenteHorario> DocenteHorario() => _docenteRepositorio.DocenteHorario();
+
+        public List<Datos.Models.AlumnosMaestros> ListaAlumnos(int DocenteID) => _docenteRepositorio.ListaAlumnos(DocenteID);
+
         public List<Datos.Models.Docente> ListaDocentePorID(int DocenteID) => _docenteRepositorio.ListaDocentePorID(DocenteID);
 
         public bool GuardarDocente(Datos.Models.Docente Docente) => _docenteRepositorio.GuardarDocente(Docente);
