@@ -31,7 +31,7 @@ namespace Academia.Controllers.v1.Nota
                 return BadRequest("Se requiere un ID de estudiante válido.");
             }
 
-            List<Datos.Models.NotaPorEstudiante> listaNotasMaestro = _notaServicio.ListaNotaClase(DocenteID);
+            List<Datos.Models.MostrarNotasMaestro> listaNotasMaestro = _notaServicio.ListaNotaMaestro(DocenteID);
 
             if (listaNotasMaestro == null || !listaNotasMaestro.Any())
             {
