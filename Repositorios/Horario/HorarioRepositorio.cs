@@ -13,15 +13,15 @@ namespace Repositorios.Horario
             this._appDbContext = appDbContext;
         }
 
-        public List<Datos.Models.Horario> ListaHorario()
+        public List<Datos.Models.ListaHorario> ListaHorario()
         {
-            List<Datos.Models.Horario> listHorario = new List<Datos.Models.Horario>();
+            List<Datos.Models.ListaHorario> listHorario = new List<Datos.Models.ListaHorario>();
 
-            var result = _appDbContext.Horario.FromSqlRaw("EXEC dbo.MostrarInformacionHorario").ToList();
+            var result = _appDbContext.MostrarHorario.FromSqlRaw("EXEC dbo.MostrarInformacionHorario").ToList();
 
             foreach (var item in result)
             {
-                listHorario.Add(new Datos.Models.Horario
+                listHorario.Add(new Datos.Models.ListaHorario
                 {
                     HorarioID = item.HorarioID,
                     DocenteID = item.DocenteID,
@@ -67,12 +67,10 @@ namespace Repositorios.Horario
         {
             try
             {
-                var sql = string.Format(@"EXEC [dbo].[AgregarEstudiante] '{0}', {1}, '{2}', '{3}', '{4}'",
+                var sql = string.Format(@"EXEC [dbo].[InsertarHorario] '{0}', {1}, '{2}'",
                     Horario.DocenteID,
                     Horario.AsignaturaID,
-                    Horario.AulaID,
-                    Horario.Hora_ClaseInicio,
-                    Horario.Hora_ClaseFin
+                    Horario.AulaID
                 );
                 var result = _appDbContext.Database.ExecuteSqlRaw(sql);
 
@@ -89,13 +87,10 @@ namespace Repositorios.Horario
             try
             {
                 _appDbContext.Database.ExecuteSqlRaw(
-                    string.Format(@"EXEC [dbo].[EditarEstudiante] {0}, '{1}', {2}, '{3}', '{4}', '{5}'",
-                    Horario.HorarioID,
+                    string.Format(@"EXEC [dbo].[EditarEstudiante] {0}, '{1}', {2}",
                     Horario.DocenteID,
                     Horario.AsignaturaID,
-                    Horario.AulaID,
-                    Horario.Hora_ClaseInicio,
-                    Horario.Hora_ClaseFin
+                    Horario.AulaID
                 ));
                 return true;
             }

@@ -25,6 +25,8 @@ namespace Datos.DataDb
         public DbSet<AlumnosMaestros> Alumnos { get; set; }
         public DbSet<HorarioMatriculaDatos> HorarioMatricula { get; set; }
         public DbSet<ListaMatricula> Lista { get; set; }
+        public DbSet<MostrarNotasMaestro> MostrarNotas { get; set; }
+        public DbSet<ListaHorario> MostrarHorario { get; set; }
 
     }
 }

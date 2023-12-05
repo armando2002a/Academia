@@ -32,6 +32,13 @@ namespace Repositorios.Nota
             return listNota;
         }
 
+        public List<Datos.Models.MostrarNotasMaestro> ListaNotaMaestro(int DocenteID)
+        {
+            var result = _appDbContext.MostrarNotas.FromSqlRaw("EXEC MostrarNotasEstudianteMaestro @DocenteID", new SqlParameter("@DocenteID", DocenteID)).ToList();
+
+            return result;
+        }
+
         public List<Datos.Models.NotaPorEstudiante> ListaNotaClase(int EstudianteID)
         {
             var result = _appDbContext.NotaClase.FromSqlRaw("EXEC ObtenerNotasPorEstudiante @EstudianteID", new SqlParameter("@EstudianteID", EstudianteID)).ToList();

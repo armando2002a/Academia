@@ -13,6 +13,8 @@ namespace Servicio.Nota
 
         public List<Datos.Models.Nota> ListaNota() => _notaRepositorio.ListaNota();
 
+        public List<Datos.Models.MostrarNotasMaestro> ListaNotaMaestro(int EstudianteID) => _notaRepositorio.ListaNotaMaestro(EstudianteID);
+
         public List<Datos.Models.NotaPorEstudiante> ListaNotaClase(int EstudianteID) => _notaRepositorio.ListaNotaClase(EstudianteID);
 
         public List<Datos.Models.Nota> ListaNotaPorID(int NotaID) => _notaRepositorio.ListaNotaPorID(NotaID);

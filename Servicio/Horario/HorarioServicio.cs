@@ -11,7 +11,7 @@ namespace Servicio.Horario
             _horarioRepositorio = horarioRepositorio;
         }
 
-        public List<Datos.Models.Horario> ListaHorario() => _horarioRepositorio.ListaHorario();
+        public List<Datos.Models.ListaHorario> ListaHorario() => _horarioRepositorio.ListaHorario();
 
         public List<Datos.Models.HorarioMatriculaDatos> ListaHorarioMatricula() => _horarioRepositorio.ListaHorarioMatricula();
 

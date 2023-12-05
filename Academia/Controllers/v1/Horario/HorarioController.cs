@@ -32,7 +32,7 @@ namespace Academia.Controllers.v1.Horario
 
         [HttpPost]
         [Route("ListaPorID")]
-        public IActionResult ListaPorID([FromBody] Datos.Models.Horario Horario)
+        public IActionResult ListaPorID([FromBody] Datos.Models.ListaHorario Horario)
         {
             return Ok(_horarioServicio.ListaHorarioPorID(Horario.HorarioID));
         }
