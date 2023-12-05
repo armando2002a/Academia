@@ -12,15 +12,15 @@ namespace Repositorios.Matricula
             this._appDbContext = appDbContext;
         }
 
-        public List<Datos.Models.Matricula> ListaMatricula()
+        public List<Datos.Models.ListaMatricula> ListaMatricula()
         {
-            List<Datos.Models.Matricula> listMatricula = new List<Datos.Models.Matricula>();
+            List<Datos.Models.ListaMatricula> listMatricula = new List<Datos.Models.ListaMatricula>();
 
-            var result = _appDbContext.Matricula.FromSqlRaw("EXEC dbo.MostrarInformacionMatricula").ToList();
+            var result = _appDbContext.Lista.FromSqlRaw("EXEC dbo.MostrarInformacionMatricula").ToList();
 
             foreach (var item in result)
             {
-                listMatricula.Add(new Datos.Models.Matricula
+                listMatricula.Add(new Datos.Models.ListaMatricula
                 {
                     MatriculaID = item.MatriculaID,
                     EstudianteID = item.EstudianteID,
@@ -41,10 +41,9 @@ namespace Repositorios.Matricula
         {
             try
             {
-                var sql = string.Format(@"EXEC [dbo].[AgregarMatricula] '{0}', {1}, '{2}'",
+                var sql = string.Format(@"EXEC [dbo].[AgregarMatricula] '{0}', {1}",
                     Matricula.EstudianteID,
-                    Matricula.HorarioID,
-                    Matricula.FechaMatricula
+                    Matricula.HorarioID
                 );
                 var result = _appDbContext.Database.ExecuteSqlRaw(sql);
 
@@ -61,11 +60,9 @@ namespace Repositorios.Matricula
             try
             {
                 _appDbContext.Database.ExecuteSqlRaw(
-                    string.Format(@"EXEC [dbo].[EditarMatricula] {0}, '{1}', {2}, '{3}'",
-                    Matricula.MatriculaID,
+                    string.Format(@"EXEC [dbo].[EditarMatricula] {0}, '{1}'",
                     Matricula.EstudianteID,
-                    Matricula.HorarioID,
-                    Matricula.FechaMatricula
+                    Matricula.HorarioID
 
                 ));
                 return true;

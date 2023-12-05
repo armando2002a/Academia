@@ -24,7 +24,7 @@ namespace Academia.Controllers.v1.Matricula
 
         [HttpPost]
         [Route("ListaPorID")]
-        public IActionResult ListaPorID([FromBody] Datos.Models.Matricula Matricula)
+        public IActionResult ListaPorID([FromBody] Datos.Models.ListaMatricula Matricula)
         {
             return Ok(_matriculaServicio.ListaMatriculaPorID(Matricula.MatriculaID));
         }

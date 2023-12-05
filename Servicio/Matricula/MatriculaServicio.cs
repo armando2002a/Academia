@@ -1,5 +1,4 @@
-﻿using Repositorios.Estudiante;
-using Repositorios.Matricula;
+﻿using Repositorios.Matricula;
 
 namespace Servicio.Matricula
 {
@@ -12,7 +11,7 @@ namespace Servicio.Matricula
             _matriculaRepositorio = MatriculaRepositorio;
         }
 
-        public List<Datos.Models.Matricula> ListaMatricula() => _matriculaRepositorio.ListaMatricula();
+        public List<Datos.Models.ListaMatricula> ListaMatricula() => _matriculaRepositorio.ListaMatricula();
 
         public List<Datos.Models.Matricula> ListaMatriculaPorID(int MatriculaID) => _matriculaRepositorio.ListaMatriculaPorID(MatriculaID);
 
