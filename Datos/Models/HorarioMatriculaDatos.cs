@@ -2,7 +2,7 @@
 
 namespace Datos.Models
 {
-    public class InformacionDetalladaClases
+    public class HorarioMatriculaDatos
     {
         [Key]
         public int? HorarioID { get; set; }

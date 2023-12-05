@@ -35,15 +35,15 @@ namespace Repositorios.Horario
             return listHorario;
         }
 
-        public List<Datos.Models.HorarioMatricula> ListaHorarioMatricula()
+        public List<Datos.Models.HorarioMatriculaDatos> ListaHorarioMatricula()
         {
-            List<Datos.Models.HorarioMatricula> InformacionMatriculaHorario = new List<Datos.Models.HorarioMatricula>();
+            List<Datos.Models.HorarioMatriculaDatos> InformacionMatriculaHorario = new List<Datos.Models.HorarioMatriculaDatos>();
 
-            var result = _appDbContext.Matricula.FromSqlRaw("EXEC dbo.HorarioMatriculaDatos").ToList();
+            var result = _appDbContext.HorarioMatricula.FromSqlRaw("EXEC dbo.HorarioMatriculaDatos").ToList();
 
             foreach (var item in result)
             {
-                InformacionMatriculaHorario.Add(new Datos.Models.HorarioMatricula
+                InformacionMatriculaHorario.Add(new Datos.Models.HorarioMatriculaDatos
                 {
                     HorarioID = item.HorarioID,
                     NombreDocente = item.NombreDocente,
